@@ -1,5 +1,41 @@
 /* Basic styles */
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,800');
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?n2f6ev');
+  src:  url('../fonts/icomoon.eot?n2f6ev#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?n2f6ev') format('truetype'),
+    url('../fonts/icomoon.woff?n2f6ev') format('woff'),
+    url('../fonts/icomoon.svg?n2f6ev#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.icon-list:before {
+  content: "\e9ba";
+}
+
+.icon-cross:before {
+  content: "\e9ba";
+}
+
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
 
 * {
     box-sizing: border-box;
@@ -700,14 +736,14 @@ footer p span {
 }
 
 /** Media **/
-@media (max-width: 900px){
+@media (max-width: 950px){
 
 .main-slide{
     height: auto;
 }
 
 .main-slide-info{
-    padding-top: 50px;
+    padding-top: 100px;
     padding-bottom: 50px;
 }
 
@@ -767,10 +803,10 @@ footer p span {
 .blog-post h6{
     margin: 0px;
 }
-}
+} 
 
 
-@media (max-width: 600px){
+@media (max-width: 890px){
 .container p{
     font-size: 14px;
 }
@@ -833,14 +869,14 @@ footer p span {
 
 }
 
-@media (max-width: 320px){
+@media (max-width: 595px){
 .container p{
     font-size: 8px;
 }
 
 .main-slide-info h2, #about-us, #services,
 #gallery, #subscribe, #blog, #contact{
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .main-slide-info{
@@ -907,6 +943,7 @@ footer p span {
 .post-name {
     top: 40px;
     left: 20px;
+    right: 15px;
 }
 
 .blog-post h6{
@@ -924,12 +961,14 @@ footer p span {
 }
 
 .btn-blog {
-    margin-top: 25px;
+    margin-top: 35px;
     margin-bottom: 25px;
 }
 
+
 .contact-form{
     width: 50%;
+    margin-bottom: 25px;
 }
 
 .contact-form input {
@@ -960,4 +999,57 @@ footer p span {
 .contact-form textarea {
     height: 75px;
 }
+
+footer{
+    padding: 0;
+}
+}
+
+/*Responsive menu*/
+#show-menu{
+    position: absolute;
+    z-index: -1;
+    float:  right;
+    background: #3D3D3D;
+    transition: opacity 0.5s ease;
+}
+
+@media (max-width: 870px){
+#show-menu{
+    position: relative;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+header nav{
+    position: absolute;
+    top: 100px;
+    right: 15px;
+    z-index: -1;
+    display: block;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+    background: rgba(228, 211, 223, 0.8);
+    transition: transform 0.5s ease;
+    }
+
+header nav ul{
+    padding-left: 0px;
+}
+
+.head-nav li{
+    display: block;
+    margin: 0;
+}
+
+header nav li a:after{
+    content: '';
+    padding: 0;
+}
+
+#show-menu.open + nav{
+    width: 125px;
+    transform: translateY(0%);
+    z-index: 1;
+    } 
 }
