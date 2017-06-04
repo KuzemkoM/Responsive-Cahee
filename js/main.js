@@ -14,7 +14,7 @@ $('#show-menu').on('click', function(){
 });
 
 $(window).resize(function(){
-	if ($(window).width() > 885){
+	if ($(window).width() > 870){
 		if($('#show-menu').hasClass('open')){
 		$('#show-menu').removeClass('open')
 			.find('span')
